@@ -2,17 +2,20 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    /* CRITICAL: This allows TS to understand the #types/ imports */
+    
+    /* CRITICAL: This allows TS to understand modern package.json "imports" and "#" paths */
     "moduleResolution": "bundler", 
+    
+    /* Essential for Vite + Vue */
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
     
-    /* Required for 'path' and other Node built-ins */
-    "esModuleInterop": true,
-    "skipLibCheck": true, 
+    /* Fixes the "path" import error in your config */
+    "esModuleInterop": true, 
+    "skipLibCheck": true,
 
     /* Your existing path mapping */
     "baseUrl": ".",
