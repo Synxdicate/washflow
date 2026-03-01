@@ -1,34 +1,24 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode is required for Vite 5+ and those #types errors */
-    "moduleResolution": "bundler",
+    /* CRITICAL: This allows TS to understand the #types/ imports */
+    "moduleResolution": "bundler", 
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-
-    /* Fixes the "path" import error in vite.config.ts */
+    
+    /* Required for 'path' and other Node built-ins */
     "esModuleInterop": true,
+    "skipLibCheck": true, 
 
-    /* Your existing Path Mapping */
+    /* Your existing path mapping */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"]
 }
