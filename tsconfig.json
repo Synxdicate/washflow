@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // This is the modern standard for Vite/Vercel
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "esModuleInterop": true,     // Fixes the "path" default import error
+    "skipLibCheck": true         // Skips type checking of node_modules
   }
 }
